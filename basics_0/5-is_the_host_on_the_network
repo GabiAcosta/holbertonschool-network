@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#The purpose of this script is to utilize the 'ping' command to check the availability of a host.
+#The '-z' option checks if the string is empty.
+#With the '-c' option, the number of packets to be sent is specified to 5.
+script_name=$(basename "$0")
+if [ -z "$1" ]; then
+    echo "Usage: $script_name {IP_ADDRESS}"
+else
+    ping -c 5 "$1"
+fi
